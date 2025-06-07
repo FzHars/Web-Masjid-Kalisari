@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masjid Jami' Asy-Syuhada Kalisari | Dashboard</title>
-</head>
-<body>
-    
-</body>
-</html>
+@extends('layouts.main')
+@section('container')
+    <h1> <?php echo $header_d1; ?></h1>
+    <h1>{{ $header_d1 }}</h1>
+    <img src="img/<?php echo $img; ?>" alt="">
+@endsection
