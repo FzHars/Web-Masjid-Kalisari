@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,51 +32,7 @@ Route::get('/dashboard', function () {
         "img" => "kopi.jpg"
     ]);
 });
-Route::get('/posts', function () {
-    $posts = [
-        [
-            "judul" => "Judul Post Satu",
-            "slug" => "judul-post-satu",
-            "penulis" => "Fawaz",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ullam deserunt praesentium asperiores accusamus delectus rerum sint nihil dolores minima distinctio ipsam itaque, iure architecto sunt. Nam reiciendis ipsam rem culpa praesentium, asperiores aut doloribus vitae adipisci sequi odio similique et officia ratione laborum iste reprehenderit distinctio accusantium nemo repellendus?"
-        ],
-        [
-            "judul" => "Judul Post Dua",
-            "slug" => "judul-post-dua",
-            "penulis" => "Cinta",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ullam deserunt praesentium asperiores accusamus delectus rerum sint nihil dolores minima distinctio ipsam itaque, iure architecto sunt. Nam reiciendis ipsam rem culpa praesentium, asperiores aut doloribus vitae adipisci sequi odio similique et officia ratione laborum iste reprehenderit distinctio accusantium nemo repellendus?"
-        ]
-    ];
-    return view('posts', [
-        "title" => "Posts",
-        "posts" => $posts
-    ]);
-});
+Route::get('/posts', [PostController::class, "index"]);
 
 // halaman single post
-Route::get('post/{slug}', function ($slug) {
-    $posts = [
-        [
-            "judul" => "Judul Post Satu",
-            "slug" => "judul-post-satu",
-            "penulis" => "Fawaz",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ullam deserunt praesentium asperiores accusamus delectus rerum sint nihil dolores minima distinctio ipsam itaque, iure architecto sunt. Nam reiciendis ipsam rem culpa praesentium, asperiores aut doloribus vitae adipisci sequi odio similique et officia ratione laborum iste reprehenderit distinctio accusantium nemo repellendus?"
-        ],
-        [
-            "judul" => "Judul Post Dua",
-            "slug" => "judul-post-dua",
-            "penulis" => "Cinta",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ullam deserunt praesentium asperiores accusamus delectus rerum sint nihil dolores minima distinctio ipsam itaque, iure architecto sunt. Nam reiciendis ipsam rem culpa praesentium, asperiores aut doloribus vitae adipisci sequi odio similique et officia ratione laborum iste reprehenderit distinctio accusantium nemo repellendus?"
-        ]
-    ];
-    $new_post = [];
-    foreach ($posts as $post) {
-        if($post["slug"] === $slug){
-            $new_post = $post;
-        }
-    }
-    return view('single_posts', [
-        "title" => "Single Post Ini",
-        "post" => $new_post
-    ]);
-});
+Route::get('post/{slug}', [PostController::class, 'showSingle']);
