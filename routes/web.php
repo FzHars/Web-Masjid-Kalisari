@@ -35,4 +35,4 @@ Route::get('/dashboard', function () {
 Route::get('/posts', [PostController::class, "index"]);
 
 // halaman single post
-Route::get('post/{slug}', [PostController::class, 'showSingle']);
+Route::get('post/{post:slug}', [PostController::class, 'showSingle']);
