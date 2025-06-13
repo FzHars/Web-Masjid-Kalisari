@@ -6,7 +6,7 @@
     @foreach ($categories as $category)
         <h2>
             <a href="/categories/{{ $category->slug }}"> {{ $category->name }}
-        </a>
+            </a>
         </h2>
     @endforeach
 @endsection
