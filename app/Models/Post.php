@@ -12,4 +12,13 @@ class Post extends Model
     // protected $fillable = ['title', 'author', 'excerpt', 'body'];
     // yang tidak diinput
     protected $guarded = ['id'];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
