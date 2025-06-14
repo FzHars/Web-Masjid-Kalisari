@@ -12,6 +12,10 @@ class Post extends Model
     // protected $fillable = ['title', 'author', 'excerpt', 'body'];
     // yang tidak diinput
     protected $guarded = ['id'];
+    // eager load
+    protected $with = ['author', 'category'];
+    // lazy eager load
+    protected $load = ['category', 'author'];
 
     public function category()
     {

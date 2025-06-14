@@ -13,10 +13,10 @@
                 <li class="nav-item">
                     <a class="nav-link {{ $title === 'Dashboard' ? 'active' : '' }}" href="/dashboard">Dashboard</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link {{ $title === 'Posts' ? 'active' : '' }}" href="/posts">Posts</a>
-                </li> -->
-                <li class="nav-item dropdown">
+                <li class="nav-item">
+                    <a class="nav-link {{ $title === 'All Posts' ? 'active' : '' }}" href="/posts">Posts</a>
+                </li>
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ $title === 'Posts' ? 'active' : '' }}" href="/posts" role="button" data-bs-toggle="dropdown" >
                         Posts 2
                     </a>
@@ -35,7 +35,7 @@
                         </li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link {{ $title === 'Welcome' ? 'active' : '' }}" href="/welcome">Welcome</a>
                 </li>

@@ -18,10 +18,9 @@ class CategoryController extends Controller
 
     public function singleCtg(Category $category)
     {
-        return view('category', [
-        'title' => "Categories",
+        return view('posts', [
+        'title' => "Post By Category : $category->name",
         'posts' => $category->posts,
-        'category' => $category->name
     ]);
     }
 }
