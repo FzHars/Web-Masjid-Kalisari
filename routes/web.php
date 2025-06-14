@@ -22,17 +22,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/welcome', function () {
     return view('welcome', [
-        "title" => "Welcome"
+        "title" => "Welcome",
+        'active' => 'welcome'
     ]);
 });
 Route::get('/home', function () {
     return view('home', [
-        "title" => "Home"
+        "title" => "Home",
+        'active' => 'home'
     ]);
 });
 Route::get('/dashboard', function () {
     return view('dashboard', [
         "title" => "Dashboard",
+        'active' => 'dashboard',
         "header_d1" => "Coba data dari routes",
         "img" => "kopi.jpg"
     ]);

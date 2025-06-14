@@ -12,6 +12,7 @@ class AuthorController extends Controller
     {
         return view('authors', [
             'title' => 'List Authors',
+            'active' => 'authors',
             'authors' => Author::all()
             // 'posts' => Author::latest()->get(),
         ]);
@@ -20,6 +21,7 @@ class AuthorController extends Controller
     {
         return view('posts', [
             'title' => "Author By: $author->name",
+            'active' => 'authors',
             'posts' => $author->posts,
         ]);
     }

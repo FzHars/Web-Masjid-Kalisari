@@ -8,13 +8,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link {{ $title === 'Home' ? 'active' : '' }}" href="/home">Home</a>
+                    <a class="nav-link {{ $active === 'home' ? 'active' : '' }}" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $title === 'Dashboard' ? 'active' : '' }}" href="/dashboard">Dashboard</a>
+                    <a class="nav-link {{ $active === 'dashboard' ? 'active' : '' }}" href="/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $title === 'All Posts' ? 'active' : '' }}" href="/posts">Posts</a>
+                    <a class="nav-link {{ $active === 'posts' ? 'active' : '' }}" href="/posts">Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ $active === 'categories' ? 'active' : '' }}" href="/categories">Categories</a>
                 </li>
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ $title === 'Posts' ? 'active' : '' }}" href="/posts" role="button" data-bs-toggle="dropdown" >
@@ -37,7 +40,7 @@
                     </ul>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link {{ $title === 'Welcome' ? 'active' : '' }}" href="/welcome">Welcome</a>
+                    <a class="nav-link {{ $active === 'welcome' ? 'active' : '' }}" href="/welcome">Welcome</a>
                 </li>
             </ul>
         </div>
