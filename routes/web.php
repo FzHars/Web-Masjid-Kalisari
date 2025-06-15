@@ -23,13 +23,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/welcome', function () {
     return view('welcome', [
         "title" => "Welcome",
-        'active' => 'welcome'
+        "active" => "welcome"
     ]);
 });
 Route::get('/home', function () {
     return view('home', [
         "title" => "Home",
-        'active' => 'home'
+        "active" => "home"
     ]);
 });
 Route::get('/dashboard', function () {
@@ -47,11 +47,11 @@ Route::get('post/{post:slug}', [PostController::class, 'showSingle']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
 
-Route::get('/categories/{category:slug}', [CategoryController::class, 'singleCtg']);
+// Route::get('/categories/{category:slug}', [CategoryController::class, 'singleCtg']);
 
 Route::get('/authors', [AuthorController::class, 'index']);
 
-Route::get('/authors/{author:username}', [AuthorController::class, 'showAuthor']);
+// Route::get('/authors/{author:username}', [AuthorController::class, 'showAuthor']);
 // Route::get('/categories/{category:slug}', function (Category $category) {
 //     return view('category', [
 //         'title' => $category->name,
@@ -59,4 +59,3 @@ Route::get('/authors/{author:username}', [AuthorController::class, 'showAuthor']
 //         'category' => $category->name
 //     ]);
 // });
-

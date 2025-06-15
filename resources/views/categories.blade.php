@@ -2,12 +2,12 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 class="mb-5">{{ $title }}</h1>
-    <div class="container p-0">
+    <h1 class="mb-4">{{ $title }}</h1>
+    <div class="container p-0 my-4">
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @foreach ($categories as $category)
                 <div class="col">
-                    <a href="/categories/{{ $category->slug }}">
+                    <a href="/posts?category={{ $category->slug }}">
                     <div class="card text-bg-dark">
                         <img src="https://picsum.photos/500/400?{{ $category->name }}" class="card-img"
                             alt="{{ $category->name }}">
